@@ -19,7 +19,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     /**
      * Home Routes
      */
-    Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/', 'HomeController@index')->name('home');
     Route::post('/register', [RegisterController::class, 'register'])->name('register.perform');
     
     Route::group(['middleware' => ['guest']], function() {

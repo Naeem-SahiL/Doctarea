@@ -16,9 +16,9 @@ class LogoutController extends Controller
     public function perform()
     {
         Session::flush();
-        
+        // dd("heelllo");
         Auth::logout();
 
-        return redirect('home');
+        return redirect('/');
     }
 }

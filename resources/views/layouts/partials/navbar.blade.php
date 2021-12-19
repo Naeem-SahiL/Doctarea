@@ -8,7 +8,9 @@
           <div class="text-end">
           {{auth()->user()->name}}
          </div>
-          
+          <div class="text-end">
+          {{auth()->user()->userRole}}
+         </div>
         @endauth
         
 
