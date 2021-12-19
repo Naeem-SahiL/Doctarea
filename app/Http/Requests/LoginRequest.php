@@ -56,11 +56,11 @@ class LoginRequest extends FormRequest
      */
     private function isEmail($param)
     {
-        $factory = $this->container->make(ValidationFactory::class);
+        // $factory = $this->container->make(ValidationFactory::class);
 
-        return ! $factory->make(
-            ['username' => $param],
-            ['username' => 'email']
-        )->fails();
+        // return ! $factory->make(
+        //     ['username' => $param],
+        //     ['username' => 'email']
+        // )->fails();
     }
 }

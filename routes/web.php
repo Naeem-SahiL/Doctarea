@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +20,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
-
+    Route::post('/register', [RegisterController::class, 'register'])->name('register.perform');
+    
     Route::group(['middleware' => ['guest']], function() {
         /**
          * Register Routes
          */
-        Route::get('/register', 'RegisterController@show')->name('register.show');
-        Route::post('/register', 'RegisterController@register')->name('register.perform');
+        Route::get('/register', [RegisterController::class, 'show'])->name('register.show');
+        Route::post('/register', [RegisterController::class, 'register'])->name('register.perform');
 
         /**
          * Login Routes
